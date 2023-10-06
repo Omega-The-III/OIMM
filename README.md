@@ -7,7 +7,7 @@ VRChat is a public social VR platform where most users are allowed to upload Uni
 The aim of the OIMM project is to create a performant and networkable procedurally generated Mansion created from dynamic components.
 OIMM will generate a mansion through connecting several components such as hallways and different types of rooms by linking their entrances/doors. Thus a chain of rooms is created.
 
-Beta screenshots
+# Beta screenshots
 ![Screenshot 2023-08-11 222118](https://github.com/Omega-The-III/OIMM/assets/57790446/a28bccba-dc3c-494d-899e-0f15cdf27ae5)
 ![Screenshot 2023-08-13 172815](https://github.com/Omega-The-III/OIMM/assets/57790446/53bcafe4-4828-4a71-9136-89500b08e34f)
 

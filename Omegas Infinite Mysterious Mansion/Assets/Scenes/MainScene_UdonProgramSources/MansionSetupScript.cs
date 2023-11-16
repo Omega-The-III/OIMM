@@ -20,23 +20,22 @@ public class MansionSetupScript : UdonSharpBehaviour
 
     void Start()
     {
-        if (Networking.LocalPlayer.isMaster)
-        {
-            GenerateSeed();
-        }
-
         playerApi = Networking.LocalPlayer;
         playerApi.SetJumpImpulse(jumpImpulse);
         playerApi.SetWalkSpeed(walkSpeed);
         playerApi.SetRunSpeed(runSpeed);
         playerApi.SetGravityStrength(gravityStrengh);
+
+        if (playerApi.isMaster)
+        {
+            GenerateSeed();
+            RequestSerialization();
+        }
     }
-    //This should generate and update a new seed if one is requested.
     private void GenerateSeed()
     {
         int seed = Random.Range(111111, 999999);
         syncedInstanceSeed = seed;
-        //SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "UpdateSeed");
         UpdateSeed();
     }
     public void UpdateSeed()
@@ -44,7 +43,6 @@ public class MansionSetupScript : UdonSharpBehaviour
         text.text = "Seed: " + syncedInstanceSeed.ToString();
         Random.InitState(syncedInstanceSeed);
     }
-    //this should be for late joiners
     public override void OnDeserialization()
     {
         base.OnDeserialization();

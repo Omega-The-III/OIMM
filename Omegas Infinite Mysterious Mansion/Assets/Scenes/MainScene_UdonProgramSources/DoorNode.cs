@@ -9,7 +9,6 @@ public class DoorNode : UdonSharpBehaviour
 
     //replace this with a script on the node slot itself that links objects together, this shit sucks
     [Tooltip("This will ALWAYS have ONLY two elements")]
-    public RoomScript[] linkedRooms;
     public GameObject[] roomDoorNodeSlots;
 
     [SerializeField] private SphereCollider trigger;
@@ -20,7 +19,7 @@ public class DoorNode : UdonSharpBehaviour
     public override void OnPlayerTriggerEnter(VRCPlayerApi player)
     {
         GenerateRoom();
-        trigger.enabled = false;
+        Destroy(trigger);
     }
 
     private void GenerateRoom()
@@ -32,8 +31,7 @@ public class DoorNode : UdonSharpBehaviour
 
         roomDoorNodeSlots[1] = newRoomScript.doorNodeSlots[randomOtherRoomDoor];
 
-        newRoomScript.doorNodeSlots[randomOtherRoomDoor].name = "Origin of last room"; //mark door as occupied
-        linkedRooms[1] = newRoomScript; //completing the link
+        newRoomScript.doorNodeSlots[randomOtherRoomDoor].name = "Occupied"; //mark door as occupied
 
         //This will rotate the room so it attaches neatly to the other door before moving the room.
         Vector3 angleDiff = roomDoorNodeSlots[0].transform.eulerAngles - roomDoorNodeSlots[1].transform.eulerAngles;

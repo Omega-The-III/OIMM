@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 265995a583e6b1842bdc8058168f1546
+guid: ba45dacc8fc100a46aaad235f83dd88d
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Hallway_Burgundy_Texture.png
-    second: {fileID: 2100000, guid: 853c7e5891c45934d99d86ce1236cbd5, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0

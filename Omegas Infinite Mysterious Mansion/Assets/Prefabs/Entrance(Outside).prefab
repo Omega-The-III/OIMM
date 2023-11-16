@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2831630913812835422}
   - component: {fileID: 2831630913812835423}
   m_Layer: 11
-  m_Name: RoomModel
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,10 +185,9 @@ MonoBehaviour:
   - {fileID: 4046078511531767472}
   doorPrefab: {fileID: 5661151679966855953, guid: db718169bdd0d3542af136d9706809ed,
     type: 3}
+  roomModel: {fileID: 2831630913812835421}
   roomType: Entrance
   roomSize: Small
-  _size: {x: 5, y: 3, z: 5}
-  center: {x: 0, y: 0, z: 0}
 --- !u!114 &2831630914356523619
 MonoBehaviour:
   m_ObjectHideFlags: 0

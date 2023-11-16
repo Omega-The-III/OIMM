@@ -1,10 +1,8 @@
-﻿    using UdonSharp;
+﻿using UdonSharp;
 using UnityEngine;
 
 public class DoorAnimation : UdonSharpBehaviour
 {
-    //this will need a local door moderator to disable doors fully when out of range of a player to minimize fixed updates
-    //Animation stuff
     [SerializeField] private float animDuration;
     [SerializeField] private float targetRotation;
     private bool animate, openState;

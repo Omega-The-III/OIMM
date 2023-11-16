@@ -929,11 +929,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorNode
       objectReference: {fileID: 0}
+    - target: {fileID: 5825399480330644507, guid: db718169bdd0d3542af136d9706809ed,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 5825399480330644507, guid: db718169bdd0d3542af136d9706809ed,
+        type: 3}
     - target: {fileID: 6402607634117579205, guid: db718169bdd0d3542af136d9706809ed,
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 6402607634117579205, guid: db718169bdd0d3542af136d9706809ed,
+        type: 3}
+    - target: {fileID: 8272683973239050905, guid: db718169bdd0d3542af136d9706809ed,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 8272683973239050905, guid: db718169bdd0d3542af136d9706809ed,
         type: 3}
     - target: {fileID: 8803410855319684041, guid: db718169bdd0d3542af136d9706809ed,
         type: 3}

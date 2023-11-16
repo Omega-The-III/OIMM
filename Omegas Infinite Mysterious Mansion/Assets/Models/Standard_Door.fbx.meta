@@ -3,7 +3,12 @@ guid: ba45dacc8fc100a46aaad235f83dd88d
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Standard_Door_Texture
+    second: {fileID: 2100000, guid: 7b7eeb81616ed644bbbeabef3fe39393, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

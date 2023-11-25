@@ -17,16 +17,16 @@ public class LocalPlayerLODTrigger : UdonSharpBehaviour
     {
         if (other.name.Contains("Room") || other.name.Contains("Door"))
         {
-            if (!other.gameObject.transform.GetChild(0).gameObject.activeSelf)
-                other.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            for (int i = 0; i < other.gameObject.transform.childCount; i++)
+                other.gameObject.transform.GetChild(i).gameObject.SetActive(true);
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.name.Contains("Room") || other.name.Contains("Door"))
+        if (other.name.Contains("_Room") || other.name.Contains("DoorNode"))
         {
-            if (other.gameObject.transform.GetChild(0).gameObject.activeSelf)
-                other.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            for(int i = 0; i < other.gameObject.transform.childCount; i++)
+                other.gameObject.transform.GetChild(i).gameObject.SetActive(false);
         }
     }
 }

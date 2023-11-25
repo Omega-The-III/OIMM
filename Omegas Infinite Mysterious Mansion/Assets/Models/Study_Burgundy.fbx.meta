@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 265995a583e6b1842bdc8058168f1546
+guid: 830374e53f95f2947a80aebe2b5e4344
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Hallway_Burgundy_Texture
-    second: {fileID: 2100000, guid: 853c7e5891c45934d99d86ce1236cbd5, type: 2}
+      name: Study_Burgundy_Texture
+    second: {fileID: 2100000, guid: 098152d210bb9d048856375d03f44467, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Hallway_Burgundy_Texture.png
-    second: {instanceID: 0}
+      name: Study_Burgundy_Texture.png
+    second: {fileID: 2100000, guid: 0a1821c464f585849b78e71376625d8b, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

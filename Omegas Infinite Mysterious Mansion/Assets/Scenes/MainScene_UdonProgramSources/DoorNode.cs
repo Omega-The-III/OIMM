@@ -24,14 +24,18 @@ public class DoorNode : UdonSharpBehaviour
 
     private void GenerateRoom()
     {
+        // Make new room and grab its script as a ref
         GameObject newRoom = Instantiate(PickRandomRoom(), transform.position, Quaternion.identity, transform.parent.parent);
         RoomScript newRoomScript = (RoomScript)newRoom.GetComponent(typeof(UdonBehaviour));
 
+        // Pick a random doornode within the newly generated room to use as an anchor point to connect to this script's doornode, what the fuck is this sentance.
         int randomOtherRoomDoor = Random.Range(0, newRoomScript.doorNodeSlots.Length);
 
-        roomDoorNodeSlots[1] = newRoomScript.doorNodeSlots[randomOtherRoomDoor];
-
-        newRoomScript.doorNodeSlots[randomOtherRoomDoor].name = "Occupied"; //mark door as occupied
+        GameObject newRoomUsedDoorNode = newRoomScript.doorNodeSlots[randomOtherRoomDoor];
+        roomDoorNodeSlots[1] = newRoomUsedDoorNode; // Complete the chain of rememberd doornode slots
+        newRoomUsedDoorNode.name = "Occupied"; // Mark door as occupied to keep track of it all because i can't
+        if (newRoomUsedDoorNode.transform.childCount > 0)
+            newRoomUsedDoorNode.transform.GetChild(0).gameObject.SetActive(false); // Open the doorway
 
         //This will rotate the room so it attaches neatly to the other door before moving the room.
         Vector3 angleDiff = roomDoorNodeSlots[0].transform.eulerAngles - roomDoorNodeSlots[1].transform.eulerAngles;
@@ -42,8 +46,5 @@ public class DoorNode : UdonSharpBehaviour
         Vector3 door2NewroomDist = newRoom.transform.position - roomDoorNodeSlots[1].transform.position; //the pos of the door node we wanna attach;
         newRoom.transform.position += door2NewroomDist;
     }
-    private GameObject PickRandomRoom()
-    {
-        return mansionScript.spawnablesList[Random.Range(0, mansionScript.spawnablesList.Length)];
-    }
+    private GameObject PickRandomRoom() { return mansionScript.spawnablesList[Random.Range(0, mansionScript.spawnablesList.Length)]; }
 }

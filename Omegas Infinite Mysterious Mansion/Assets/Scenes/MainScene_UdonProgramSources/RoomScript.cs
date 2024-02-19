@@ -18,7 +18,7 @@ public class RoomScript : UdonSharpBehaviour
 
     private void Start()
     {
-        SendCustomEventDelayedSeconds("PopulateDoors", 0.1f);
+        SendCustomEventDelayedSeconds("PopulateDoors", 0.2f);
     }
     public void PopulateDoors()
     {
@@ -40,6 +40,9 @@ public class RoomScript : UdonSharpBehaviour
                     else if (Random.value > 0.1f) //10% chance to not spawn a door, this needs to be changed with other door types
                         PlaceDoor(i, doorTransform); //Spawn a door prefab and set it up
                 }
+                else  // If there is something behind this door then block the entryway
+                    if (doorTransform.childCount > 0)
+                        doorTransform.GetChild(0).gameObject.SetActive(true);
             }
         }
         //Upon activation it will check if doorslots are populated or not or already occupied and populate those that arn't with a chance not to.
@@ -47,11 +50,15 @@ public class RoomScript : UdonSharpBehaviour
     }
     private void PlaceDoor(int doorSlotIndex, Transform doorTransf) // Note make this get a random door if i want different kinds of doors later on
     {
-        if (doorTransf.childCount > 0)
-            doorTransf.GetChild(0).gameObject.SetActive(false);
         GameObject newDoor = Instantiate(doorPrefab, doorTransf.position, doorTransf.rotation, transform.parent);
+        Debug.Log(1); //This is absolutely useless, it only serves to give unity more time in between these two lines of code so it doesnt give a nullref and break
+
         DoorNode doorNodeScript = (DoorNode)newDoor.transform.GetChild(0).GetComponent(typeof(UdonBehaviour));
-        doorNodeSlots[doorSlotIndex].gameObject.name = doorSlotIndex.ToString(); //Mark doorslot as populated
+        Debug.Log(1);
+
+        doorTransf.gameObject.name = doorSlotIndex.ToString(); //Mark doorslot as populated
+        Debug.Log(1);
+
         doorNodeScript.roomDoorNodeSlots[0] = doorNodeSlots[doorSlotIndex];
     }
 }

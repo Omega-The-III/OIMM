@@ -11,7 +11,8 @@ public class LocalPlayerLODTrigger : UdonSharpBehaviour
     }
     private void FixedUpdate()
     {
-        transform.position = Networking.LocalPlayer.GetPosition();
+        if(Networking.LocalPlayer != null)
+            transform.position = Networking.LocalPlayer.GetPosition();
     }
     private void OnTriggerEnter(Collider other)
     {

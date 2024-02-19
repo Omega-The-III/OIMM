@@ -6,7 +6,7 @@ using VRC.Udon;
 
 public class MansionSetupScript : UdonSharpBehaviour
 {
-    public GameObject[] spawnablesList;
+    public GameObject[] spawnablesArray;
 
     [SerializeField] private TextMeshProUGUI text;
     [UdonSynced] public int syncedInstanceSeed;

@@ -21,19 +21,19 @@ Thus a chain of ever expanding rooms is created.
 
 # Beta screenshots
 ![image](https://github.com/Omega-The-III/OIMM/assets/57790446/5c78c466-3d9f-482e-aa3c-35b036d0d6f6)
-Most recent screenshot
+*Most recent screenshot*
 
 ![gif](https://github.com/Omega-The-III/OIMM/blob/main/Omegas%20Infinite%20Mysterious%20Mansion/Assets/0%20Images/DoorAnimationGif.gif)
-New door with fancy opening animations
+*New door with fancy opening animations*
 
 ![Screenshot 2023-08-11 222118](https://github.com/Omega-The-III/OIMM/assets/57790446/a28bccba-dc3c-494d-899e-0f15cdf27ae5)
-Prototyping
+*Prototyping*
 
 ![Screenshot 2023-08-13 172815](https://github.com/Omega-The-III/OIMM/assets/57790446/53bcafe4-4828-4a71-9136-89500b08e34f)
-Door trigger controles
+*Door trigger controles*
 
 ![Screenshot 2023-11-21 135405](https://github.com/Omega-The-III/OIMM/assets/57790446/197f525d-da0b-4c2d-8f29-695e073d394d)
-First room
+*First room*
 
 # Style inspiration
 ![kdaIe6](https://github.com/Omega-The-III/OIMM/assets/57790446/b5c9a1ca-a256-4a4e-87d6-aa2087890089)

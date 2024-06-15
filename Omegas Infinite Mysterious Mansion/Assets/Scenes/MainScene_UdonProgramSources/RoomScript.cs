@@ -41,8 +41,11 @@ public class RoomScript : UdonSharpBehaviour
                         PlaceDoor(i, doorTransform); //Spawn a door prefab and set it up
                 }
                 else  // If there is something behind this door then block the entryway
+                {
                     if (doorTransform.childCount > 0)
                         doorTransform.GetChild(0).gameObject.SetActive(true);
+                    Debug.Log(hit.collider.gameObject.name);
+                }
             }
         }
         //Upon activation it will check if doorslots are populated or not or already occupied and populate those that arn't with a chance not to.
@@ -50,6 +53,7 @@ public class RoomScript : UdonSharpBehaviour
     }
     private void PlaceDoor(int doorSlotIndex, Transform doorTransf) // Note make this get a random door if i want different kinds of doors later on
     {
+        Debug.Log("Prefab its spawning (ITS SUPPOSED TO BE A FUCKING DOOR: )" + doorPrefab.name);
         GameObject newDoor = Instantiate(doorPrefab, doorTransf.position, doorTransf.rotation, transform.parent);
         Debug.Log(1); //This is absolutely useless, it only serves to give unity more time in between these two lines of code so it doesnt give a nullref and break
 

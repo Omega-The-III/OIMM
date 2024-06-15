@@ -329,6 +329,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6153630405920835744, guid: db718169bdd0d3542af136d9706809ed,
         type: 3}
+    - target: {fileID: 9074316179191955644, guid: db718169bdd0d3542af136d9706809ed,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -717,6 +722,8 @@ MonoBehaviour:
   - {fileID: 2126204404400773293, guid: e991a2024f203de43909b9e595995823, type: 3}
   - {fileID: 2831630914356523617, guid: af6603e656dce8044a3488fc5c525e12, type: 3}
   - {fileID: 2126204404400773293, guid: e258a144d54106c4a882e715c1e8be55, type: 3}
+  - {fileID: 2831630914356523617, guid: 9f5e5c4fe8c0f5f458fae46581482bf0, type: 3}
+  - {fileID: 2831630914356523617, guid: 0203a4aa56ef7d5459eb3f8f4a26f28f, type: 3}
   text: {fileID: 1879543813}
   syncedInstanceSeed: 0
   jumpImpulse: 3
@@ -757,7 +764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 260.7, y: 180.3}
+  m_AnchoredPosition: {x: 260.7, y: 198.9}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &812591131
@@ -807,7 +814,12 @@ MonoBehaviour:
 
 
     Hope to see yall in the future. In case
-    i don''t see ya, good afternoon, good evening and good night.'
+    i don''t see ya, good afternoon, good evening and good night.
+
+
+    TODO: make
+    the rooms(or rather door placement) adhere to a fixed tile system and change
+    the code to check for door node, idk how else to do it'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

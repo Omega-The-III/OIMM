@@ -13,7 +13,7 @@ public class DoorNode : UdonSharpBehaviour
 
     private void Start()
     {
-        mansionScript = (MansionSetupScript)gameObject.transform.parent.parent.parent.GetComponent(typeof(UdonBehaviour));
+        mansionScript = (MansionSetupScript)transform.parent.parent.parent.GetComponent(typeof(UdonBehaviour));
     }
     public override void OnPlayerTriggerEnter(VRCPlayerApi player)
     {

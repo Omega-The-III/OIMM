@@ -18,8 +18,9 @@ public class RoomScript : UdonSharpBehaviour
 
     private void Start()
     {
-        SendCustomEventDelayedSeconds("PopulateDoors", 0.2f);
+        SendCustomEventDelayedSeconds("PopulateDoors", 0.1f);
     }
+
     public void PopulateDoors()
     {
         for(int i = 0; i < doorNodeSlots.Length; i++)
@@ -29,13 +30,12 @@ public class RoomScript : UdonSharpBehaviour
             {
                 Transform doorTransform = doorNodeSlots[i].gameObject.transform;
 
-                //This isnt perfect, maybe i HAVE to replace with one raycast when the door spawns and when the room spawns a box to check if anything intersects
                 RaycastHit hit;
                 Ray RayForward = new Ray(doorTransform.position, doorTransform.forward * 2);
 
                 if (!Physics.Raycast(RayForward, out hit, maxRaycastDist))
                 {
-                    if (doorNodeSlots.Length < 3) //if we only have 2 or 1 door always spawn doors
+                    if (doorNodeSlots.Length < 3) //if we only have less then 3 doors always spawn doors
                         PlaceDoor(i, doorTransform);
                     else if (Random.value > 0.1f) //10% chance to not spawn a door, this needs to be changed with other door types
                         PlaceDoor(i, doorTransform); //Spawn a door prefab and set it up
@@ -53,15 +53,11 @@ public class RoomScript : UdonSharpBehaviour
     }
     private void PlaceDoor(int doorSlotIndex, Transform doorTransf) // Note make this get a random door if i want different kinds of doors later on
     {
-        Debug.Log("Prefab its spawning (ITS SUPPOSED TO BE A FUCKING DOOR: )" + doorPrefab.name);
         GameObject newDoor = Instantiate(doorPrefab, doorTransf.position, doorTransf.rotation, transform.parent);
-        Debug.Log(1); //This is absolutely useless, it only serves to give unity more time in between these two lines of code so it doesnt give a nullref and break
 
         DoorNode doorNodeScript = (DoorNode)newDoor.transform.GetChild(0).GetComponent(typeof(UdonBehaviour));
-        Debug.Log(1);
 
         doorTransf.gameObject.name = doorSlotIndex.ToString(); //Mark doorslot as populated
-        Debug.Log(1);
 
         doorNodeScript.roomDoorNodeSlots[0] = doorNodeSlots[doorSlotIndex];
     }

@@ -48,4 +48,7 @@ public class MansionSetupScript : UdonSharpBehaviour
         base.OnDeserialization();
         UpdateSeed();
     }
+
+    public GameObject PickRandomRoom() { return spawnablesArray[Random.Range(0, spawnablesArray.Length)]; } //This will be expanded later depending on room group type and stuff probably
+    //this will need to check what N E S W points are avalible (raycast???????) and pick a room accordingly (gl asshole)
 }
